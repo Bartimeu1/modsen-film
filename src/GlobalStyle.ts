@@ -29,6 +29,7 @@ const GlobalStyle = createGlobalStyle`
 
   body {
     font-family: 'Roboto', sans-serif;
+    background: ${(props) => props.theme.color.background};
   }
 
   button {
@@ -40,7 +41,7 @@ const GlobalStyle = createGlobalStyle`
 export const Container = styled.div`
   width: 100%;
   max-width: 1456px;
-  padding: 0 8px; 
+  padding: 0 8px;
   margin: 0 auto;
 `;
 
