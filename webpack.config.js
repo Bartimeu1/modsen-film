@@ -31,7 +31,11 @@ module.exports = {
         use: {
           loader: 'babel-loader',
           options: {
-            presets: ['@babel/preset-env', '@babel/preset-react', '@babel/preset-typescript'],
+            presets: [
+              '@babel/preset-env',
+              '@babel/preset-react',
+              '@babel/preset-typescript',
+            ],
           },
         },
       },
@@ -43,6 +47,11 @@ module.exports = {
       {
         test: /\.(png|svg)$/i,
         type: 'asset/resource',
+      },
+      {
+        test: /\.svg$/,
+        use: ['@svgr/webpack', 'url-loader'],
+        type: "javascript/auto",
       },
     ],
   },
