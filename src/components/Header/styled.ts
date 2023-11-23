@@ -23,6 +23,8 @@ export const Logo = styled.div`
   align-items: center;
 `;
 
+export const LogoImg = styled.img``;
+
 export const LogoText = styled.p`
   font-size: ${(props) => props.theme.fontSize.lg};
   color: ${(props) => props.theme.color.text};
@@ -39,7 +41,7 @@ export const ToggleButton = styled.input`
   width: 50px;
   height: 28px;
   margin: 0;
-  vertical-align: top;  
+  vertical-align: top;
   border-radius: 30px;
   outline: none;
   cursor: pointer;

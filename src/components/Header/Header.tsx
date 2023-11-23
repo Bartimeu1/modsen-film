@@ -2,11 +2,10 @@ import React from 'react';
 import { useAppDispatch } from '../../utils/hooks';
 import { toggleTheme } from '../../store/features/theme/themeSlice';
 
-import { StyledHeader, Logo, LogoText, ToggleButton } from './styled';
+import { StyledHeader, Logo, LogoText, LogoImg, ToggleButton } from './styled';
 import SearchBar from '../SearchBar/SearchBar';
-import Icon from '../Icon/Icon';
 
-import logoIcon from '../../assets/images/logo.svg';
+import  logoIcon from '../../assets/images/logo.png';
 
 function Header() {
   const dispatch = useAppDispatch();
@@ -14,7 +13,7 @@ function Header() {
   return (
     <StyledHeader>
       <Logo>
-        <Icon src={logoIcon} alt="logo" />
+        <LogoImg src={logoIcon} />
         <LogoText>ModsenFilms</LogoText>
       </Logo>
       <SearchBar />
