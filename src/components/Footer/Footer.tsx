@@ -24,7 +24,7 @@ function Footer() {
         </FooterInfo>
         <FooterSocial>
           {socialMediaLinks.map((item) => (
-            <FooterSocialLink id={item.id} href={item.href}>
+            <FooterSocialLink key={item.id} href={item.href}>
               <SvgIcon icon={item.icon} />
             </FooterSocialLink>
           ))}
