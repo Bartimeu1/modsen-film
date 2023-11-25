@@ -3,7 +3,9 @@ const lightTheme = {
   text: '#000',
   social: '#6D6E76',
   background: '#fff',
+  boxShadow: 'rgba(33,33,33,0.2)',
   button: '#FF8A00',
+  categoryBg: 'rgba(0, 0, 0, 0.06)',
 };
 
 const darktheme = {
@@ -11,7 +13,9 @@ const darktheme = {
   text: '#fff',
   social: '#fff',
   background: '#212121',
+  boxShadow: 'rgba(255, 255, 255, 0.2)',
   button: '#FF8A00',
+  categoryBg: 'rgba(255,255,255,0.1)',
 };
 
 const defaultTheme = {

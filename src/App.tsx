@@ -4,7 +4,9 @@ import { useAppSelector } from './utils/hooks';
 
 import theme from './constants/theme';
 import GlobalStyle, { Container } from './GlobalStyle';
+
 import Header from './components/Header/Header';
+import VideoContent from './components/VideoContent/VideoContent';
 import Footer from './components/Footer/Footer';
 
 function App() {
@@ -15,6 +17,7 @@ function App() {
       <GlobalStyle />
       <Container>
         <Header />
+        <VideoContent />
         <Footer />
       </Container>
     </ThemeProvider>

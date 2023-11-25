@@ -5,6 +5,7 @@ const GlobalStyle = createGlobalStyle`
 
   html {
     box-sizing: border-box;
+    height: 100%;
     font-size: 16px;
   }
 
@@ -28,18 +29,27 @@ const GlobalStyle = createGlobalStyle`
   }
 
   body {
-    font-family: 'Roboto', sans-serif;
     background: ${(props) => props.theme.color.background};
+    font-family: 'Roboto', sans-serif;
+    height: 100%;
+  }
+
+  #root {
+    height: 100%;
   }
 
   button {
     background-color: inherit;
     cursor: pointer;
+    font-family: 'Roboto', sans-serif;
   }
 `;
 
 export const Container = styled.div`
   width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
   max-width: 1456px;
   padding: 0 8px;
   margin: 0 auto;
