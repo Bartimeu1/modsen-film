@@ -3,8 +3,26 @@ import styled from 'styled-components';
 export const StyledCategoryBar = styled.div`
   display: flex;
   align-items: center;
-  justify-content: center;
-  margin: 0 -5px;
+  justify-content: space-between;
+  margin: 0 -5px 28px 0;
+  padding-bottom: 12px;
+  position: relative;
+  overflow-x: scroll;
+  &::-webkit-scrollbar {
+    height: 14px;
+    cursor: pointer;
+  }
+
+  &::-webkit-scrollbar-track {
+    border: 6px solid ${(props) => props.theme.color.background};
+    background: ${(props) => props.theme.color.border};
+  }
+
+  &::-webkit-scrollbar-thumb {
+    background-color: ${(props) => props.theme.color.button};
+    border: 4px solid ${(props) => props.theme.color.background};
+    border-radius: 10px;
+  }
 `;
 
 export const CategoryButton = styled.button`
@@ -15,7 +33,8 @@ export const CategoryButton = styled.button`
   border: 1px solid rgba(0, 0, 0, 0.1);
   padding: 7px 25px;
   margin: 0 5px;
-  max-width: 106px;
+  max-width: 115px;
+  white-space: nowrap;
   display: flex;
   align-items: center;
   justify-content: center;

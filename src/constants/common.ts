@@ -25,13 +25,3 @@ export const socialMediaLinks = [
     href: 'https://www.linkedin.com/company/modsen/?originalSubdomain=pl',
   },
 ];
-
-export const videoCategories = [
-  { id: 1, name: 'All' },
-  { id: 2, name: 'action' },
-  { id: 3, name: 'drama' },
-  { id: 4, name: 'crime' },
-  { id: 5, name: 'romantic' },
-  { id: 6, name: 'horror' },
-  { id: 7, name: 'documentary' },
-];
