@@ -12,7 +12,7 @@ import {
 
 function SearchBar() {
   const dispatch = useAppDispatch();
-  const currentCategory = useAppSelector((state) => state.movie.categoryId);
+  const currentCategory = useAppSelector((state) => state.movie.currentCategoryId);
 
   const [searchValue, setSearchValue] = useState('');
 

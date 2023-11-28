@@ -14,8 +14,10 @@ function VideoList() {
 
   const { data: moviesData, refetch } = useGetMoviesQuery({
     ...(moviesState.currentSearch && { query: moviesState.currentSearch }),
-    with_genres: moviesState.categoryId,
+    with_genres:
+      moviesState.currentCategoryId === 0 ? '' : moviesState.currentCategoryId,
   });
+  console.log();
 
   useEffect(() => {
     refetch();
