@@ -1,5 +1,5 @@
-import React, { useState } from 'react';
-import { useAppDispatch } from '../../utils/hooks';
+import React, { useState, useEffect } from 'react';
+import { useAppDispatch, useAppSelector } from '../../utils/hooks';
 
 import { updateMovieSearch } from '../../store/features/movies/movieSlice';
 
@@ -12,6 +12,7 @@ import {
 
 function SearchBar() {
   const dispatch = useAppDispatch();
+  const currentCategory = useAppSelector((state) => state.movie.categoryId);
 
   const [searchValue, setSearchValue] = useState('');
 
@@ -22,6 +23,11 @@ function SearchBar() {
   const onSearchButtonClick = () => {
     dispatch(updateMovieSearch({ value: searchValue }));
   };
+
+  useEffect(() => {
+    setSearchValue('');
+    dispatch(updateMovieSearch({ value: '' }));
+  }, [currentCategory]);
 
   return (
     <StyledSearchBar>

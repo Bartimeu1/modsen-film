@@ -5,17 +5,7 @@ export const StyledHeader = styled.header`
   display: flex;
   align-items: center;
   justify-content: space-between;
-  padding: 15px 0;
-  position: relative;
-  &::after {
-    background: ${(props) => props.theme.color.border};
-    position: absolute;
-    bottom: 0;
-    left: 0;
-    content: '';
-    width: 100%;
-    height: 1px;
-  }
+  padding-top: 15px;
 `;
 
 export const Logo = styled.div`

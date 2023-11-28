@@ -1,13 +1,26 @@
 import styled from 'styled-components';
 
+interface ICategoryButton {
+  isCurrent: Boolean;
+}
+
 export const StyledCategoryBar = styled.div`
   display: flex;
   align-items: center;
   justify-content: space-between;
   margin: 0 -5px 28px 0;
-  padding-bottom: 12px;
+  padding: 12px 0;
   position: relative;
   overflow-x: scroll;
+  &::after {
+    background: ${(props) => props.theme.color.border};
+    position: absolute;
+    top: 0;
+    left: 0;
+    content: '';
+    width: 100%;
+    height: 1px;
+  }
   &::-webkit-scrollbar {
     height: 14px;
     cursor: pointer;
@@ -25,10 +38,12 @@ export const StyledCategoryBar = styled.div`
   }
 `;
 
-export const CategoryButton = styled.button`
-  color: ${(props) => props.theme.color.text};
+export const CategoryButton = styled.button<ICategoryButton>`
+  color: ${(props) =>
+    props.isCurrent ? props.theme.color.background : props.theme.color.text};
   border-radius: ${(props) => props.theme.borderRadius.medium};
-  background: ${(props) => props.theme.color.categoryBg};
+  background: ${(props) =>
+    props.isCurrent ? props.theme.color.text : props.theme.color.categoryBg};
   font-size: ${(props) => props.theme.fontSize.sm};
   border: 1px solid rgba(0, 0, 0, 0.1);
   padding: 7px 25px;
