@@ -17,8 +17,8 @@ function VideoContent() {
   const moviesState = useAppSelector((state) => state.movie);
 
   const { data: moviesData, refetch } = useGetMoviesQuery({
-    ...(moviesState.currentSearch && { query: moviesState.currentSearch }),
     with_genres: moviesState.currentCategoryId || '',
+    ...(moviesState.currentSearch && { query: moviesState.currentSearch }),
     page: moviesState.currentApiPage,
   });
 

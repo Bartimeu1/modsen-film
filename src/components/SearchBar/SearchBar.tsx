@@ -1,7 +1,10 @@
 import React, { useState, useEffect } from 'react';
 import { useAppDispatch, useAppSelector } from '../../utils/hooks';
 
-import { updateMovieSearch } from '../../store/features/movies/movieSlice';
+import {
+  updateMovieSearch,
+  setMovieCategory,
+} from '../../store/features/movies/movieSlice';
 
 import {
   StyledSearchBar,
@@ -23,12 +26,15 @@ function SearchBar() {
   };
 
   const onSearchButtonClick = () => {
+    dispatch(setMovieCategory({ categoryId: 0 }));
     dispatch(updateMovieSearch({ value: searchValue }));
   };
 
   useEffect(() => {
-    setSearchValue('');
-    dispatch(updateMovieSearch({ value: '' }));
+    if (currentCategory !== 0) {
+      setSearchValue('');
+      dispatch(updateMovieSearch({ value: '' }));
+    }
   }, [currentCategory]);
 
   return (
