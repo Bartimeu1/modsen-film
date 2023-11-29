@@ -1,6 +1,6 @@
 import styled from 'styled-components';
 
-export const StyledVideoContent = styled.main`
+export const StyledMovieContent = styled.main`
   flex: 1 1 auto;
   display: flex;
   padding-bottom: 54px;

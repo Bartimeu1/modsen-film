@@ -1,16 +1,16 @@
 import styled from 'styled-components';
 
-interface VideoPosterProps {
+interface MoviePosterProps {
   url: string;
 }
 
-export const StyledVideoItem = styled.div`
+export const StyledMovieItem = styled.div`
   display: flex;
   flex-direction: column;
   margin-bottom: 62px;
 `;
 
-export const VideoPoster = styled.div<VideoPosterProps>`
+export const MoviePoster = styled.div<MoviePosterProps>`
   width: 332px;
   height: 186px;
   background-image: ${({ url }) => `url(${url})`};
@@ -20,12 +20,12 @@ export const VideoPoster = styled.div<VideoPosterProps>`
   margin-bottom: 12px;
 `;
 
-export const VideoInfo = styled.div`
+export const MovieInfo = styled.div`
   display: flex;
   align-items: flex-start;
 `;
 
-export const VideoText = styled.div`
+export const MovieText = styled.div`
   display: flex;
   flex-direction: column;
   padding-top: 10px;
@@ -35,7 +35,7 @@ export const AvatarPhoto = styled.img`
   margin-right: 12px;
 `;
 
-export const VideoTitle = styled.p`
+export const MovieTitle = styled.p`
   font-size: ${(props) => props.theme.fontSize.md};
   color: ${(props) => props.theme.color.text};
   line-height: 18px;
@@ -46,7 +46,7 @@ export const VideoTitle = styled.p`
   max-width: 269px;
 `;
 
-export const VideoDetails = styled.p`
+export const MovieDetails = styled.p`
   font-size: ${(props) => props.theme.fontSize.sm};
   color: ${(props) => props.theme.color.text};
   line-height: 18px;

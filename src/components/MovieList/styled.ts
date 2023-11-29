@@ -1,6 +1,6 @@
 import styled from "styled-components";
 
-export const StyledVideoList = styled.div`
+export const StyledMovieList = styled.div`
   display: flex;
   align-items: center;
   justify-content: space-between;

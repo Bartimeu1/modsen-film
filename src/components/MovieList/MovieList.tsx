@@ -3,24 +3,24 @@ import { useAppSelector } from '../../utils/hooks';
 
 import { IMovieItem } from '../../types/globalTypes';
 
-import { StyledVideoList } from './styled';
-import VideoItem from '../VideoItem/VideoItem';
+import { StyledMovieList } from './styled';
+import MovieItem from '../MovieItem/MovieItem';
 
-function VideoList() {
+function MovieList() {
   const moviesList = useAppSelector((state) => state.movie.moviesList);
 
   return (
-    <StyledVideoList>
+    <StyledMovieList>
       {moviesList.map((movie: IMovieItem) => (
-        <VideoItem
+        <MovieItem
           key={movie.id}
           title={movie.title}
           poster={movie.poster_path}
           year={movie.release_date}
         />
       ))}
-    </StyledVideoList>
+    </StyledMovieList>
   );
 }
 
-export default VideoList;
+export default MovieList;

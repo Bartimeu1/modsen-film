@@ -6,7 +6,7 @@ import theme from './constants/theme';
 import GlobalStyle, { Container } from './GlobalStyle';
 
 import Header from './components/Header/Header';
-import VideoContent from './components/VideoContent/VideoContent';
+import MovieContent from './components/MovieContent/MovieContent';
 import Footer from './components/Footer/Footer';
 
 function App() {
@@ -17,7 +17,7 @@ function App() {
       <GlobalStyle />
       <Container>
         <Header />
-        <VideoContent />
+        <MovieContent />
         <Footer />
       </Container>
     </ThemeProvider>

@@ -1,9 +1,9 @@
 import React, { useEffect } from 'react';
 import { useAppDispatch, useAppSelector } from '../../utils/hooks';
 
-import { StyledVideoContent, ShowMoreButton } from './styled';
+import { StyledMovieContent, ShowMoreButton } from './styled';
 import CategoryBar from '../CategoryBar/CategoryBar';
-import VideoList from '../VideoList/VideoList';
+import MovieList from '../MovieList/MovieList';
 
 import { useGetMoviesQuery } from '../../store/features/movies/movieApi';
 import {
@@ -12,7 +12,7 @@ import {
 } from '../../store/features/movies/movieSlice';
 import { getLimitedMovieArray } from '../../utils/helpers';
 
-function VideoContent() {
+function MovieContent() {
   const dispatch = useAppDispatch();
   const moviesState = useAppSelector((state) => state.movie);
 
@@ -45,17 +45,17 @@ function VideoContent() {
   };
 
   return (
-    <StyledVideoContent>
+    <StyledMovieContent>
       <CategoryBar />
-      <VideoList />
+      <MovieList />
       {moviesData &&
         moviesData.total_results !== moviesState.moviesList.length && (
           <ShowMoreButton onClick={() => onShowMoreClick()}>
             Show More
           </ShowMoreButton>
         )}
-    </StyledVideoContent>
+    </StyledMovieContent>
   );
 }
 
-export default VideoContent;
+export default MovieContent;
