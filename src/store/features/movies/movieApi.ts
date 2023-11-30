@@ -1,6 +1,10 @@
 import { baseApi } from '../baseApi/baseApi';
 
-import { IMovieData, ICategoryData } from '../../../types/globalTypes';
+import {
+  IMovieData,
+  ICategoryData,
+  IMovieVideoData,
+} from '../../../types/globalTypes';
 
 export const movieApi = baseApi.injectEndpoints({
   endpoints: (builder) => ({
@@ -20,7 +24,17 @@ export const movieApi = baseApi.injectEndpoints({
         method: 'GET',
       }),
     }),
+    getVideoByMovieId: builder.query<IMovieVideoData, { movieId: number }>({
+      query: (credentials) => ({
+        url: `/movie/${credentials.movieId}/videos`,
+        method: 'GET',
+      }),
+    }),
   }),
 });
 
-export const { useGetCategoriesQuery, useGetMoviesQuery } = movieApi;
+export const {
+  useGetCategoriesQuery,
+  useGetMoviesQuery,
+  useGetVideoByMovieIdQuery,
+} = movieApi;

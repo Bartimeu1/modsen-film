@@ -7,7 +7,16 @@ interface MoviePosterProps {
 export const StyledMovieItem = styled.div`
   display: flex;
   flex-direction: column;
-  margin-bottom: 62px;
+  padding: 20px 10px;
+  margin-bottom: 42px;
+  cursor: pointer;
+  border-radius: 5px;
+  transition: all 0.3s;
+  box-shadow: 0 0 20px ${(props) => props.theme.color.boxShadow};
+  &:hover {
+    transition: all 0.3s;
+    box-shadow: 10px 15px 25px 0 ${(props) => props.theme.color.boxShadow};
+  }
 `;
 
 export const MoviePoster = styled.div<MoviePosterProps>`

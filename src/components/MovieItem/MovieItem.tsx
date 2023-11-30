@@ -16,16 +16,17 @@ import avatarImg from '../../assets/images/avatar.png';
 import noPosterImg from '../../assets/images/noPoster.png';
 
 interface IMovieItemProps {
+  onClick: React.MouseEventHandler<HTMLDivElement>;
   title: string;
   poster: string;
   year: Date;
 }
 function MovieItem(props: IMovieItemProps) {
-  const { title, poster, year } = props;
+  const { title, poster, year, onClick } = props;
 
   return (
-    <StyledMovieItem>
-      <MoviePoster url={poster ? `${POSTER_URL}${poster}` : noPosterImg} />
+    <StyledMovieItem onClick={onClick}>
+      <MoviePoster url={poster ? `${POSTER_URL}/${poster}` : noPosterImg} />
       <MovieInfo>
         <AvatarPhoto src={avatarImg} />
         <MovieText>
