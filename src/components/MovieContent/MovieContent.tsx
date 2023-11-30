@@ -18,7 +18,7 @@ function MovieContent() {
 
   const {
     data: moviesData,
-    isLoading,
+    isFetching,
     refetch,
   } = useGetMoviesQuery({
     with_genres: moviesState.currentCategoryId || '',
@@ -51,7 +51,7 @@ function MovieContent() {
   return (
     <StyledMovieContent>
       <CategoryBar />
-      <MovieList isLoading={isLoading} />
+      <MovieList isFetching={isFetching} />
       {moviesData &&
         moviesData.total_results !== moviesState.moviesList.length && (
           <ShowMoreButton onClick={() => onShowMoreClick()}>
