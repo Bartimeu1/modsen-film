@@ -6,6 +6,7 @@ const lightTheme = {
   boxShadow: 'rgba(33,33,33,0.2)',
   button: '#FF8A00',
   categoryBg: 'rgba(0, 0, 0, 0.06)',
+  skeletonBg: '#f2f2f2',
 };
 
 const darktheme = {
@@ -16,6 +17,7 @@ const darktheme = {
   boxShadow: 'rgba(255, 255, 255, 0.2)',
   button: '#FF8A00',
   categoryBg: 'rgba(255,255,255,0.1)',
+  skeletonBg: '#333333',
 };
 
 const defaultTheme = {

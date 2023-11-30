@@ -16,7 +16,11 @@ function MovieContent() {
   const dispatch = useAppDispatch();
   const moviesState = useAppSelector((state) => state.movie);
 
-  const { data: moviesData, refetch } = useGetMoviesQuery({
+  const {
+    data: moviesData,
+    isLoading,
+    refetch,
+  } = useGetMoviesQuery({
     with_genres: moviesState.currentCategoryId || '',
     ...(moviesState.currentSearch && { query: moviesState.currentSearch }),
     page: moviesState.currentApiPage,
@@ -47,7 +51,7 @@ function MovieContent() {
   return (
     <StyledMovieContent>
       <CategoryBar />
-      <MovieList />
+      <MovieList isLoading={isLoading} />
       {moviesData &&
         moviesData.total_results !== moviesState.moviesList.length && (
           <ShowMoreButton onClick={() => onShowMoreClick()}>
