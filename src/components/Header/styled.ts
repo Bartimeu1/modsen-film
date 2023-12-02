@@ -1,5 +1,9 @@
 import styled from 'styled-components';
 
+interface IToggleContainer {
+  isBurgerActive: boolean;
+}
+
 export const StyledHeader = styled.header`
   width: 100%;
   display: flex;
@@ -16,6 +20,32 @@ export const StyledHeader = styled.header`
     width: 100%;
     height: 1px;
   }
+
+  @media (max-width: 830px) {
+    flex-wrap: wrap;
+    flex-direction: column;
+  }
+
+  @media (max-width: 400px) {
+    &::after {
+      display: none;
+    }
+  }
+`;
+
+export const HeaderTopper = styled.div`
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  @media (max-width: 830px) {
+    margin-bottom: 30px;
+    width: 100%;
+  }
+
+  @media (max-width: 400px) {
+    padding: 0 6px;
+  }
 `;
 
 export const Logo = styled.div`
@@ -30,6 +60,23 @@ export const LogoText = styled.p`
   color: ${(props) => props.theme.color.text};
   font-weight: 700;
   margin-left: 6px;
+
+  @media (max-width: 650px) {
+    margin-left: 1px;
+  }
+`;
+
+export const ToggleContainer = styled.div<IToggleContainer>`
+  @media (max-width: 830px) {
+    display: ${(props) => (props.isBurgerActive ? 'block' : 'none')};
+    background: ${(props) => props.theme.color.background};
+    position: absolute;
+    z-index: 5;
+    top: 13px;
+    left: 0;
+    width: 100%;
+    height: 50px;
+  }
 `;
 
 export const ToggleButton = styled.input`

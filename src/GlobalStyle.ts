@@ -51,8 +51,8 @@ export const Container = styled.div`
   height: 100%;
   display: flex;
   flex-direction: column;
-  max-width: 1456px;
-  padding: 0 8px;
+  max-width: 1470px;
+  padding: 0 15px;
   margin: 0 auto;
 `;
 

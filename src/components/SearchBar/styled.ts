@@ -6,6 +6,11 @@ export const StyledSearchBar = styled.div`
   display: flex;
   align-items: center;
   height: 38px;
+  @media (max-width: 650px) {
+    height: 33px;
+    justify-content: center;
+    width: 100%;
+  }
 `;
 
 export const SearchInput = styled.input`
@@ -20,6 +25,10 @@ export const SearchInput = styled.input`
     opacity: 51%;
     font-size: ${(props) => props.theme.fontSize.sm};
     color: ${(props) => props.theme.color.text};
+  }
+
+  @media (max-width: 650px) {
+    width: 100%;
   }
 `;
 
