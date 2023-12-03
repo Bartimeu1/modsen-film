@@ -21,15 +21,37 @@
   },
   "plugins": [
     "react",
+    "simple-import-sort",
     "@typescript-eslint"
   ],
   "settings": {
     "react": {
       "version": "18.2.0"
+    },
+    "import/resolver": {
+      "alias": {
+        "map": [
+          ["@root", "./src"],
+          ["@components", "./src/components"],
+          ["@services", "./src/services"],
+          ["@constants", "./src/constants"],
+          ["@middlewares", "./src/middlewares"],
+          ["@utils", "./src/utils"]
+        ]
+      }
     }
   },
   "rules": {
     "react/jsx-uses-react": "off",
-    "react/react-in-jsx-scope": "off"
+    "react/react-in-jsx-scope": "off",
+    "simple-import-sort/imports": ["error", {
+      "groups": [
+        ["^react"],
+        ["^antd"],
+        ["^@?\\w"],
+        ["@/(.*)"],
+        ["^[./]"]
+      ]
+    }]
   }
 }

@@ -1,19 +1,19 @@
 import React from 'react';
 
-import { getYearByDate } from '../../utils/helpers';
-import { POSTER_URL } from '../../constants/url';
+import avatarImg from '@assets/images/avatar.png';
+import noPosterImg from '@assets/images/noPoster.png';
+import { POSTER_URL } from '@constants/url';
+import { getYearByDate } from '@utils/helpers';
+
 import {
-  StyledMovieItem,
-  MoviePoster,
-  MovieInfo,
   AvatarPhoto,
+  MovieDetails,
+  MovieInfo,
+  MoviePoster,
   MovieText,
   MovieTitle,
-  MovieDetails,
+  StyledMovieItem,
 } from './styled';
-
-import avatarImg from '../../assets/images/avatar.png';
-import noPosterImg from '../../assets/images/noPoster.png';
 
 interface IMovieItemProps {
   onClick: React.MouseEventHandler<HTMLDivElement>;

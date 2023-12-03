@@ -1,6 +1,5 @@
 import { createSlice, PayloadAction } from '@reduxjs/toolkit';
-
-import { IMovieItem, ICategoryItem } from '../../../types/globalTypes';
+import { ICategoryItem,IMovieItem } from '@root/types/globalTypes';
 
 interface IMovieSliceState {
   currentCategoryId: number;

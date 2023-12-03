@@ -1,7 +1,8 @@
-import styled from "styled-components";
+import styled from 'styled-components';
 
 export const StyledSvgIcon = styled.svg`
-  & g, path {
-    fill: ${(props) => props.theme.color.social}
+  & g,
+  path {
+    fill: ${(props) => props.theme.color.social};
   }
 `;

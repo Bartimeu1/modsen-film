@@ -1,17 +1,16 @@
 import React, { useEffect } from 'react';
-import { useAppDispatch, useAppSelector } from '../../utils/hooks';
 
-import { useGetCategoriesQuery } from '../../store/features/movies/movieApi';
+import { ReactComponent as ErrorIcon } from '@assets/images/error.svg';
+import SvgIcon from '@components/SvgIcon/SvgIcon';
+import { ICategoryItem } from '@root/types/globalTypes';
+import { useGetCategoriesQuery } from '@store/features/movies/movieApi';
 import {
   setMovieCategory,
   updateCategoriesList,
-} from '../../store/features/movies/movieSlice';
+} from '@store/features/movies/movieSlice';
+import { useAppDispatch, useAppSelector } from '@utils/hooks';
 
-import SvgIcon from '../SvgIcon/SvgIcon';
-import { StyledCategoryBar, CategoryButton } from './styled';
-
-import { ReactComponent as ErrorIcon } from '../../assets/images/error.svg';
-import { ICategoryItem } from '../../types/globalTypes';
+import { CategoryButton, StyledCategoryBar } from './styled';
 
 function CategoryBar() {
   const dispatch = useAppDispatch();
@@ -44,7 +43,7 @@ function CategoryBar() {
         categoriesList.map((item: ICategoryItem) => (
           <CategoryButton
             key={item.id}
-            iscurrent={item.id === currentCategoryId}
+            iscurrent={item.id === currentCategoryId ? 'true' : 'false'}
             onClick={() => onCategoryButtonClick(item.id)}>
             {item.name}
           </CategoryButton>

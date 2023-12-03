@@ -1,17 +1,17 @@
 import React, { useEffect } from 'react';
 import ReactDOM from 'react-dom';
-import { useGetVideoByMovieIdQuery } from '../../store/features/movies/movieApi';
+
+import { BASE_VIDEO_URL } from '@constants/url';
+import { IMovieItem } from '@root/types/globalTypes';
+import { useGetVideoByMovieIdQuery } from '@store/features/movies/movieApi';
 
 import {
-  StyledMovieModal,
-  MovieTitle,
+  ModalCloseButton,
   ModalContent,
   ModalVideo,
-  ModalCloseButton,
+  MovieTitle,
+  StyledMovieModal,
 } from './styled';
-
-import { BASE_VIDEO_URL } from '../../constants/url';
-import { IMovieItem } from '../../types/globalTypes';
 
 interface IMovieModalProps {
   onClose: React.MouseEventHandler<HTMLDivElement | HTMLButtonElement>;

@@ -1,6 +1,5 @@
+import { ReactComponent as SearchIcon } from '@assets/images/search.svg';
 import styled from 'styled-components';
-
-import { ReactComponent as SearchIcon } from '../../assets/images/search.svg';
 
 export const StyledSearchBar = styled.div`
   display: flex;

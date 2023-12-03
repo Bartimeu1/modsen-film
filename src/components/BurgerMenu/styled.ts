@@ -1,7 +1,7 @@
 import styled from 'styled-components';
 
 interface IBurgerMenu {
-  isActive: Boolean;
+  isactive: string;
 }
 
 export const StyledBurgerMenu = styled.button<IBurgerMenu>`
@@ -24,16 +24,18 @@ export const StyledBurgerMenu = styled.button<IBurgerMenu>`
     transition: 0.3s;
   }
   &::before {
-    top: ${(props) => (props.isActive ? '5px' : 0)};
-    transform: ${(props) => (props.isActive ? 'rotate(45deg)' : 'none')};
+    top: ${(props) => (props.isactive === 'true' ? '5px' : 0)};
+    transform: ${(props) =>
+      props.isactive === 'true' ? 'rotate(45deg)' : 'none'};
   }
   &:after {
-    bottom: ${(props) => (props.isActive ? '5px' : 0)};
-    transform: ${(props) => (props.isActive ? 'rotate(-45deg)' : 'none')};
+    bottom: ${(props) => (props.isactive === 'true' ? '5px' : 0)};
+    transform: ${(props) =>
+      props.isactive === 'true' ? 'rotate(-45deg)' : 'none'};
   }
 
   & span {
-    display: ${(props) => (props.isActive ? 'none' : 'block')};
+    display: ${(props) => (props.isactive === 'true' ? 'none' : 'block')};
   }
 
   @media (max-width: 830px) {

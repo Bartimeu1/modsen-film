@@ -1,14 +1,14 @@
 import React, { useState } from 'react';
-import { useAppSelector } from '../../utils/hooks';
 
-import { IMovieItem } from '../../types/globalTypes';
+import MovieItem from '@components/MovieItem/MovieItem';
+import MovieModal from '@components/MovieModal/MovieModal';
+import MovieSkeletonLoader from '@components/MovieSkeletonLoader/MovieSkeletonLoader';
+import { IMovieItem } from '@root/types/globalTypes';
+import { useAppSelector } from '@utils/hooks';
 
 import { StyledMovieList } from './styled';
-import MovieItem from '../MovieItem/MovieItem';
-import MovieSkeletonLoader from '../MovieSkeletonLoader/MovieSkeletonLoader';
-import MovieModal from '../MovieModal/MovieModal';
 
-function MovieList({ isFetching }: { isFetching: Boolean }) {
+function MovieList({ isFetching }: { isFetching: boolean }) {
   const moviesList = useAppSelector((state) => state.movie.moviesList);
 
   const [selectedMovieItem, setSelectedMovieItem] = useState<IMovieItem | null>(
@@ -35,7 +35,9 @@ function MovieList({ isFetching }: { isFetching: Boolean }) {
         />
       ))}
       {isFetching &&
-        Array.from({ length: 16 }).map(() => <MovieSkeletonLoader />)}
+        Array.from({ length: 16 }).map((_, index) => (
+          <MovieSkeletonLoader key={index} />
+        ))}
       {selectedMovieItem && (
         <MovieModal movie={selectedMovieItem} onClose={handleCloseModal} />
       )}

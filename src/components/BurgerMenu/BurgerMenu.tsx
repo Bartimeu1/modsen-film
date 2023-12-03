@@ -1,17 +1,17 @@
 import React from 'react';
 
-import { StyledBurgerMenu, BurgerRow } from './styled';
+import { BurgerRow, StyledBurgerMenu } from './styled';
 
 interface IBurgerMenuProps {
   onClick: React.MouseEventHandler<HTMLButtonElement>;
-  isActive: Boolean;
+  isActive: boolean;
 }
 
 function BurgerMenu(props: IBurgerMenuProps) {
   const { onClick, isActive } = props;
 
   return (
-    <StyledBurgerMenu onClick={onClick} isActive={isActive}>
+    <StyledBurgerMenu onClick={onClick} isactive={isActive.toString()}>
       <BurgerRow />
     </StyledBurgerMenu>
   );

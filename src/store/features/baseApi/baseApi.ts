@@ -1,6 +1,5 @@
-import { fetchBaseQuery, createApi } from '@reduxjs/toolkit/query/react';
-
-import { BASE_MOVIE_URL } from '../../../constants/url';
+import { BASE_MOVIE_URL } from '@constants/url';
+import { createApi,fetchBaseQuery } from '@reduxjs/toolkit/query/react';
 
 const baseQuery = fetchBaseQuery({
   baseUrl: BASE_MOVIE_URL,

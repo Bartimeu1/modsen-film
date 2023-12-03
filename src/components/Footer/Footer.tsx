@@ -1,18 +1,18 @@
 import React from 'react';
 
-import SvgIcon from '../SvgIcon/SvgIcon';
+import SvgIcon from '@components/SvgIcon/SvgIcon';
+import { socialMediaLinks } from '@constants/common';
+import { pressCopyrightText, privacyPolicyText } from '@constants/text';
+
 import {
-  StyledFooter,
   FooterContent,
   FooterInfo,
   FooterInfoText,
+  FooterLabel,
   FooterSocial,
   FooterSocialLink,
-  FooterLabel,
+  StyledFooter,
 } from './styled';
-
-import { privacyPolicyText, pressCopyrightText } from '../../constants/text';
-import { socialMediaLinks } from '../../constants/common';
 
 function Footer() {
   return (

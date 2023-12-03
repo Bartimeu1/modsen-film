@@ -16,11 +16,19 @@ module.exports = {
     }),
     new Dotenv({
       path: './.env',
-      systemvars: true
-    })
+      systemvars: true,
+    }),
   ],
   resolve: {
     extensions: ['.js', '.ts', '.tsx', '.jsx'],
+    alias: {
+      '@root': path.resolve(__dirname, './src'),
+      '@components': path.resolve(__dirname, './src/components'),
+      '@utils': path.resolve(__dirname, './src/utils'),
+      '@constants': path.resolve(__dirname, './src/constants'),
+      '@store': path.resolve(__dirname, './src/store'),
+      '@assets': path.resolve(__dirname, './src/assets'),
+    },
   },
   module: {
     rules: [
@@ -55,7 +63,7 @@ module.exports = {
       {
         test: /\.svg$/,
         use: ['@svgr/webpack', 'url-loader'],
-        type: "javascript/auto",
+        type: 'javascript/auto',
       },
     ],
   },

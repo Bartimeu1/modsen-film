@@ -1,7 +1,7 @@
 import styled from 'styled-components';
 
 interface ICategoryButton {
-  iscurrent: boolean;
+  iscurrent: string;
 }
 
 export const StyledCategoryBar = styled.div`
@@ -37,10 +37,14 @@ export const StyledCategoryBar = styled.div`
 
 export const CategoryButton = styled.button<ICategoryButton>`
   color: ${(props) =>
-    props.iscurrent ? props.theme.color.background : props.theme.color.text};
+    props.iscurrent === 'true'
+      ? props.theme.color.background
+      : props.theme.color.text};
   border-radius: ${(props) => props.theme.borderRadius.medium};
   background: ${(props) =>
-    props.iscurrent ? props.theme.color.text : props.theme.color.categoryBg};
+    props.iscurrent === 'true'
+      ? props.theme.color.text
+      : props.theme.color.categoryBg};
   font-size: ${(props) => props.theme.fontSize.sm};
   border: 1px solid rgba(0, 0, 0, 0.1);
   padding: 7px 25px;

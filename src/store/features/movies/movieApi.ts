@@ -1,10 +1,10 @@
-import { baseApi } from '../baseApi/baseApi';
-
 import {
-  IMovieData,
   ICategoryData,
+  IMovieData,
   IMovieVideoData,
-} from '../../../types/globalTypes';
+} from '@root/types/globalTypes';
+
+import { baseApi } from '../baseApi/baseApi';
 
 export const movieApi = baseApi.injectEndpoints({
   endpoints: (builder) => ({

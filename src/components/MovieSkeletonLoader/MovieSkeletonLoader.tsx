@@ -1,13 +1,13 @@
 import React from 'react';
 
 import {
-  StyledSkeletonLoader,
-  SkeletonPoster,
-  SkeletonInfo,
   SkeletonAvatarPhoto,
+  SkeletonDetails,
+  SkeletonInfo,
+  SkeletonPoster,
   SkeletonText,
   SkeletonTitle,
-  SkeletonDetails,
+  StyledSkeletonLoader,
 } from './styled';
 
 function MovieSkeletonLoader() {

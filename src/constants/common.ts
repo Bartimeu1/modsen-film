@@ -1,7 +1,7 @@
-import { ReactComponent as InstagramIcon } from '../assets/images/instagram.svg';
-import { ReactComponent as FacebookIcon } from '../assets/images/facebook.svg';
-import { ReactComponent as TwitterIcon } from '../assets/images/twitter.svg';
-import { ReactComponent as LinkedinIcon } from '../assets/images/linkedin.svg';
+import { ReactComponent as FacebookIcon } from '@assets/images/facebook.svg';
+import { ReactComponent as InstagramIcon } from '@assets/images/instagram.svg';
+import { ReactComponent as LinkedinIcon } from '@assets/images/linkedin.svg';
+import { ReactComponent as TwitterIcon } from '@assets/images/twitter.svg';
 
 export const socialMediaLinks = [
   {

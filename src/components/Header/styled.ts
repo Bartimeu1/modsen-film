@@ -1,7 +1,7 @@
 import styled from 'styled-components';
 
 interface IToggleContainer {
-  isBurgerActive: boolean;
+  isburgeractive: string;
 }
 
 export const StyledHeader = styled.header`
@@ -68,7 +68,7 @@ export const LogoText = styled.p`
 
 export const ToggleContainer = styled.div<IToggleContainer>`
   @media (max-width: 830px) {
-    display: ${(props) => (props.isBurgerActive ? 'block' : 'none')};
+    display: ${(props) => (props.isburgeractive === "true" ? 'block' : 'none')};
     background: ${(props) => props.theme.color.background};
     position: absolute;
     z-index: 5;

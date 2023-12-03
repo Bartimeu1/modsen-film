@@ -1,20 +1,20 @@
 import React, { useState } from 'react';
-import { useAppDispatch } from '../../utils/hooks';
-import { toggleTheme } from '../../store/features/theme/themeSlice';
+
+import logoIcon from '@assets/images/logo.png';
+import BurgerMenu from '@components//BurgerMenu/BurgerMenu';
+import SearchBar from '@components/SearchBar/SearchBar';
+import { toggleTheme } from '@store/features/theme/themeSlice';
+import { useAppDispatch } from '@utils/hooks';
 
 import {
-  StyledHeader,
   HeaderTopper,
   Logo,
-  LogoText,
   LogoImg,
-  ToggleContainer,
+  LogoText,
+  StyledHeader,
   ToggleButton,
+  ToggleContainer,
 } from './styled';
-import SearchBar from '../SearchBar/SearchBar';
-import BurgerMenu from '../BurgerMenu/BurgerMenu';
-
-import logoIcon from '../../assets/images/logo.png';
 
 function Header() {
   const dispatch = useAppDispatch();
@@ -36,7 +36,7 @@ function Header() {
         />
       </HeaderTopper>
       <SearchBar />
-      <ToggleContainer isBurgerActive={isBurgerActive}>
+      <ToggleContainer isburgeractive={isBurgerActive.toString()}>
         <ToggleButton
           type="checkbox"
           onClick={() => {

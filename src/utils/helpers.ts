@@ -1,4 +1,4 @@
-import { IMovieItem } from '../types/globalTypes';
+import { IMovieItem } from '@root/types/globalTypes';
 
 export const getYearByDate = (date: Date) => {
   return date.toString().split('-')[0];

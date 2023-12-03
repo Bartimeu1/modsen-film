@@ -1,21 +1,21 @@
 import React, { useEffect } from 'react';
-import { useAppDispatch, useAppSelector } from '../../utils/hooks';
 
+import CategoryBar from '@components/CategoryBar/CategoryBar';
+import MovieList from '@components/MovieList/MovieList';
+import { errorText } from '@constants/text';
+import { useGetMoviesQuery } from '@store/features/movies/movieApi';
 import {
-  StyledMovieContent,
-  ShowMoreButton,
-  MovieContentError,
-} from './styled';
-import CategoryBar from '../CategoryBar/CategoryBar';
-import MovieList from '../MovieList/MovieList';
-
-import { useGetMoviesQuery } from '../../store/features/movies/movieApi';
-import {
-  updateMovieList,
   setCurrentApiPage,
-} from '../../store/features/movies/movieSlice';
-import { getLimitedMovieArray } from '../../utils/helpers';
-import { errorText } from '../../constants/text';
+  updateMovieList,
+} from '@store/features/movies/movieSlice';
+import { getLimitedMovieArray } from '@utils/helpers';
+import { useAppDispatch, useAppSelector } from '@utils/hooks';
+
+import {
+  MovieContentError,
+  ShowMoreButton,
+  StyledMovieContent,
+} from './styled';
 
 function MovieContent() {
   const dispatch = useAppDispatch();

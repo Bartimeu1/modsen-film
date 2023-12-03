@@ -1,15 +1,15 @@
-import React, { useState, useEffect } from 'react';
-import { useAppDispatch, useAppSelector } from '../../utils/hooks';
+import React, { useEffect, useState } from 'react';
 
 import {
-  updateMovieSearch,
   setMovieCategory,
-} from '../../store/features/movies/movieSlice';
+  updateMovieSearch,
+} from '@store/features/movies/movieSlice';
+import { useAppDispatch, useAppSelector } from '@utils/hooks';
 
 import {
-  StyledSearchBar,
-  SearchInput,
   SearchButton,
+  SearchInput,
+  StyledSearchBar,
   StyledSearchIcon,
 } from './styled';
 
