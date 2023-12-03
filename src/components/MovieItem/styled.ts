@@ -5,6 +5,7 @@ interface MoviePosterProps {
 }
 
 export const StyledMovieItem = styled.div`
+  width: 24%;
   display: flex;
   flex-direction: column;
   padding: 20px 10px;
@@ -17,16 +18,37 @@ export const StyledMovieItem = styled.div`
     transition: all 0.3s;
     box-shadow: 10px 15px 25px 0 ${(props) => props.theme.color.boxShadow};
   }
+
+  @media (max-width: 1200px) {
+    width: 32.5%;
+  }
+
+  @media (max-width: 930px) {
+    width: 49%;
+  }
+
+  @media (max-width: 650px) {
+    width: 90%;
+    padding: 10px;
+    margin-bottom: 30px;
+  }
+
+  @media (max-width: 400px) {
+    width: 100%;
+  }
 `;
 
 export const MoviePoster = styled.div<MoviePosterProps>`
-  width: 332px;
   height: 186px;
   background-image: ${({ url }) => `url(${url})`};
   background-size: cover;
   background-repeat: no-repeat;
   background-position: center;
   margin-bottom: 12px;
+
+  @media (max-width: 400px) {
+    height: 130px;
+  }
 `;
 
 export const MovieInfo = styled.div`
@@ -38,6 +60,10 @@ export const MovieText = styled.div`
   display: flex;
   flex-direction: column;
   padding-top: 10px;
+
+  @media (max-width: 400px) {
+    padding-top: 3px;
+  }
 `;
 
 export const AvatarPhoto = styled.img`
@@ -52,7 +78,23 @@ export const MovieTitle = styled.p`
   white-space: nowrap;
   overflow: hidden;
   text-overflow: ellipsis;
-  max-width: 269px;
+  max-width: 220px;
+
+  @media (max-width: 1200px) {
+    max-width: 230px;
+  }
+
+  @media (max-width: 930px) {
+    max-width: 240px;
+  }
+
+  @media (max-width: 650px) {
+    font-size: ${(props) => props.theme.fontSize.sm};
+  }
+
+  @media (max-width: 380px) {
+    max-width: 190px;
+  }
 `;
 
 export const MovieDetails = styled.p`

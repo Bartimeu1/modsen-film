@@ -3,8 +3,12 @@ import styled from 'styled-components';
 export const StyledMovieContent = styled.main`
   flex: 1 1 auto;
   display: flex;
-  padding-bottom: 54px;
+  margin-bottom: 54px;
   flex-direction: column;
+
+  @media (max-width: 400px) {
+    margin-bottom: 60px;
+  }
 `;
 
 export const ShowMoreButton = styled.button`
@@ -13,6 +17,7 @@ export const ShowMoreButton = styled.button`
   margin: 67px auto 0 auto;
   color: #fff;
   width: 193px;
+  font-weight: 700;
   border: 1px solid #ff8a00;
   background: #ff8a00;
   transition: 0.3s;
@@ -21,5 +26,12 @@ export const ShowMoreButton = styled.button`
     background: inherit;
     color: #ff8a00;
     transition: 0.3s;
+  }
+
+  @media (max-width: 400px) {
+    font-size: ${(props) => props.theme.fontSize.md};
+    width: 97%;
+    margin-top: 40px;
+    padding: 8px 0;
   }
 `;

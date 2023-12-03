@@ -5,5 +5,9 @@ export const StyledMovieList = styled.div`
   align-items: center;
   justify-content: space-between;
   flex-wrap: wrap;
-  margin-bottom: -62px;
+  margin-bottom: -30px;
+
+  @media (max-width: 650px) {
+    justify-content: center;
+  }
 `;
