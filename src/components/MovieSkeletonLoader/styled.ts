@@ -9,13 +9,34 @@ export const StyledSkeletonLoader = styled.div`
   cursor: pointer;
   border-radius: 5px;
   transition: all 0.3s;
+
+  @media (max-width: 1200px) {
+    width: 32.5%;
+  }
+
+  @media (max-width: 930px) {
+    width: 49%;
+  }
+
+  @media (max-width: 650px) {
+    width: 90%;
+    padding: 10px;
+    margin-bottom: 30px;
+  }
+
+  @media (max-width: 400px) {
+    width: 100%;
+  }
 `;
 
 export const SkeletonPoster = styled.div`
   background: ${(props) => props.theme.color.skeletonBg};
-  width: 332px;
   height: 186px;
   margin-bottom: 12px;
+
+  @media (max-width: 400px) {
+    height: 130px;
+  }
 `;
 
 export const SkeletonInfo = styled.div`
@@ -29,6 +50,10 @@ export const SkeletonText = styled.div`
   flex-direction: column;
   padding-top: 10px;
   background: inherit;
+
+  @media (max-width: 400px) {
+    padding-top: 3px;
+  }
 `;
 
 export const SkeletonAvatarPhoto = styled.div`
@@ -44,6 +69,18 @@ export const SkeletonTitle = styled.div`
   margin-bottom: 10px;
   width: 269px;
   height: 15px;
+
+  @media (max-width: 1200px) {
+    max-width: 230px;
+  }
+
+  @media (max-width: 930px) {
+    max-width: 240px;
+  }
+
+  @media (max-width: 380px) {
+    max-width: 190px;
+  }
 `;
 
 export const SkeletonDetails = styled.div`
