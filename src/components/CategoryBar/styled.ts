@@ -27,6 +27,12 @@ export const StyledCategoryBar = styled.div`
     border: 4px solid ${(props) => props.theme.color.background};
     border-radius: 10px;
   }
+
+  & svg {
+    width: 50px;
+    height: 50px;
+    margin: 0 auto;
+  }
 `;
 
 export const CategoryButton = styled.button<ICategoryButton>`

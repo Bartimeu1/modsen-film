@@ -5,6 +5,7 @@ export const StyledMovieContent = styled.main`
   display: flex;
   margin-bottom: 54px;
   flex-direction: column;
+  position: relative;
 
   @media (max-width: 400px) {
     margin-bottom: 60px;
@@ -33,5 +34,21 @@ export const ShowMoreButton = styled.button`
     width: 97%;
     margin-top: 40px;
     padding: 8px 0;
+  }
+`;
+
+export const MovieContentError = styled.div`
+  font-size: ${(props) => props.theme.fontSize.xxl};
+  color: ${(props) => props.theme.color.text};
+  text-align: center;
+  width: 100%;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  font-weight: 500;
+  transform: translate(-50%, -50%);
+
+  @media (max-width: 530px) {
+    font-size: ${(props) => props.theme.fontSize.sm};
   }
 `;

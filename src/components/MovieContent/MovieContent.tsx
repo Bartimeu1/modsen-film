@@ -1,7 +1,11 @@
 import React, { useEffect } from 'react';
 import { useAppDispatch, useAppSelector } from '../../utils/hooks';
 
-import { StyledMovieContent, ShowMoreButton } from './styled';
+import {
+  StyledMovieContent,
+  ShowMoreButton,
+  MovieContentError,
+} from './styled';
 import CategoryBar from '../CategoryBar/CategoryBar';
 import MovieList from '../MovieList/MovieList';
 
@@ -11,6 +15,7 @@ import {
   setCurrentApiPage,
 } from '../../store/features/movies/movieSlice';
 import { getLimitedMovieArray } from '../../utils/helpers';
+import { errorText } from '../../constants/text';
 
 function MovieContent() {
   const dispatch = useAppDispatch();
@@ -18,6 +23,7 @@ function MovieContent() {
 
   const {
     data: moviesData,
+    error,
     isFetching,
     refetch,
   } = useGetMoviesQuery({
@@ -58,6 +64,7 @@ function MovieContent() {
             Show More
           </ShowMoreButton>
         )}
+      {error && <MovieContentError>{errorText}</MovieContentError>}
     </StyledMovieContent>
   );
 }

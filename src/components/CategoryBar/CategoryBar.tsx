@@ -6,8 +6,11 @@ import {
   setMovieCategory,
   updateCategoriesList,
 } from '../../store/features/movies/movieSlice';
+
+import SvgIcon from '../SvgIcon/SvgIcon';
 import { StyledCategoryBar, CategoryButton } from './styled';
 
+import { ReactComponent as ErrorIcon } from '../../assets/images/error.svg';
 import { ICategoryItem } from '../../types/globalTypes';
 
 function CategoryBar() {
@@ -17,7 +20,7 @@ function CategoryBar() {
     (state) => state.movie.currentCategoryId,
   );
 
-  const { data: categoriesData } = useGetCategoriesQuery();
+  const { data: categoriesData, error } = useGetCategoriesQuery();
 
   useEffect(() => {
     if (categoriesData) {
@@ -35,14 +38,18 @@ function CategoryBar() {
 
   return (
     <StyledCategoryBar>
-      {categoriesList.map((item: ICategoryItem) => (
-        <CategoryButton
-          key={item.id}
-          iscurrent={item.id === currentCategoryId}
-          onClick={() => onCategoryButtonClick(item.id)}>
-          {item.name}
-        </CategoryButton>
-      ))}
+      {error ? (
+        <SvgIcon icon={ErrorIcon} />
+      ) : (
+        categoriesList.map((item: ICategoryItem) => (
+          <CategoryButton
+            key={item.id}
+            iscurrent={item.id === currentCategoryId}
+            onClick={() => onCategoryButtonClick(item.id)}>
+            {item.name}
+          </CategoryButton>
+        ))
+      )}
     </StyledCategoryBar>
   );
 }
