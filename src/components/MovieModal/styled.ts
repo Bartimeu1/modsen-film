@@ -29,6 +29,16 @@ export const ModalContent = styled.div`
   flex-direction: column;
   z-index: 5;
   position: relative;
+
+  @media (max-width: 720px) {
+    width: 90%;
+    height: 320px;
+  }
+
+  @media (max-width: 420px) {
+    height: 260px;
+    padding: 15px 10px;
+  }
 `;
 
 export const MovieTitle = styled.h4`
@@ -36,10 +46,22 @@ export const MovieTitle = styled.h4`
   font-size: ${(props) => props.theme.color.xxxl};
   font-weight: 500;
   margin-bottom: 30px;
+
+  @media (max-width: 420px) {
+    margin-bottom: 20px;
+  }
 `;
 
 export const ModalVideo = styled.iframe`
   border: none;
+
+  @media (max-width: 720px) {
+    width: 95%;
+  }
+
+  @media (max-width: 420px) {
+    width: 100%;
+  }
 `;
 
 export const ModalCloseButton = styled.button`
@@ -64,5 +86,12 @@ export const ModalCloseButton = styled.button`
   }
   &::after {
     transform: rotate(-45deg);
+  }
+
+  @media (max-width: 420px) {
+    width: 20px;
+    height: 20px;
+    top: 15px;
+    right: 20px;
   }
 `;
