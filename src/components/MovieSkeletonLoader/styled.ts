@@ -2,6 +2,7 @@ import styled from 'styled-components';
 
 export const StyledSkeletonLoader = styled.div`
   box-shadow: 0 0 20px ${(props) => props.theme.color.boxShadow};
+  width: 24%;
   display: flex;
   flex-direction: column;
   padding: 20px 10px;
