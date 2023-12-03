@@ -28,7 +28,7 @@ export const ShowMoreButton = styled.button`
     transition: 0.3s;
   }
 
-  @media (max-width: 400px) {
+  @media (max-width: 500px) {
     font-size: ${(props) => props.theme.fontSize.md};
     width: 97%;
     margin-top: 40px;
