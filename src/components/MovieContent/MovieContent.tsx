@@ -58,12 +58,11 @@ function MovieContent() {
     <StyledMovieContent>
       <CategoryBar />
       <MovieList isFetching={isFetching} />
-      {moviesData &&
-        moviesData.total_results !== moviesState.moviesList.length && (
-          <ShowMoreButton onClick={() => onShowMoreClick()}>
-            Show More
-          </ShowMoreButton>
-        )}
+      {moviesData && moviesData.total_pages !== moviesState.currentApiPage && (
+        <ShowMoreButton onClick={() => onShowMoreClick()}>
+          Show More
+        </ShowMoreButton>
+      )}
       {error && <MovieContentError>{errorText}</MovieContentError>}
     </StyledMovieContent>
   );
