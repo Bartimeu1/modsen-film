@@ -37,6 +37,22 @@ export const ShowMoreButton = styled.button`
   }
 `;
 
+export const MovieListEmpty = styled.div`
+  font-size: ${(props) => props.theme.fontSize.xxl};
+  color: ${(props) => props.theme.color.text};
+  text-align: center;
+  width: 100%;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  font-weight: 500;
+  transform: translate(-50%, -50%);
+
+  @media (max-width: 530px) {
+    font-size: ${(props) => props.theme.fontSize.sm};
+  }
+`;
+
 export const MovieContentError = styled.div`
   font-size: ${(props) => props.theme.fontSize.xxl};
   color: ${(props) => props.theme.color.text};

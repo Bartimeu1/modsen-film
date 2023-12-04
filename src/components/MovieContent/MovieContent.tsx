@@ -2,7 +2,7 @@ import React, { useEffect } from 'react';
 
 import CategoryBar from '@components/CategoryBar/CategoryBar';
 import MovieList from '@components/MovieList/MovieList';
-import { errorText } from '@constants/text';
+import { errorText, nothingFoundedText } from '@constants/text';
 import { useGetMoviesQuery } from '@store/features/movies/movieApi';
 import {
   setCurrentApiPage,
@@ -15,6 +15,7 @@ import {
   MovieContentError,
   ShowMoreButton,
   StyledMovieContent,
+  MovieListEmpty,
 } from './styled';
 
 function MovieContent() {
@@ -62,6 +63,9 @@ function MovieContent() {
         <ShowMoreButton onClick={() => onShowMoreClick()}>
           Show More
         </ShowMoreButton>
+      )}
+      {moviesState.moviesList.length === 0 && (
+        <MovieListEmpty>{nothingFoundedText}</MovieListEmpty>
       )}
       {error && <MovieContentError>{errorText}</MovieContentError>}
     </StyledMovieContent>
