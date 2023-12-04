@@ -38,6 +38,7 @@ function Header() {
       <SearchBar />
       <ToggleContainer isburgeractive={isBurgerActive.toString()}>
         <ToggleButton
+          data-testid="toggle-theme-button"
           type="checkbox"
           onClick={() => {
             dispatch(toggleTheme());

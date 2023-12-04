@@ -38,7 +38,7 @@ function SearchBar() {
   }, [currentCategory]);
 
   return (
-    <StyledSearchBar>
+    <StyledSearchBar data-testid="search-bar">
       <SearchInput
         placeholder="Search"
         value={searchValue}

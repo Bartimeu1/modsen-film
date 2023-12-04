@@ -38,12 +38,15 @@ function MovieModal(props: IMovieModalProps) {
   };
 
   return ReactDOM.createPortal(
-    <StyledMovieModal onClick={onClose}>
+    <StyledMovieModal onClick={onClose} data-testid="movie-modal">
       <ModalContent
         onClick={(e) => {
           onModalContentClick(e);
         }}>
-        <ModalCloseButton onClick={(e) => onClose(e)} />
+        <ModalCloseButton
+          onClick={(e) => onClose(e)}
+          data-testid="movie-modal-close"
+        />
         <MovieTitle>{movie.title}</MovieTitle>
         {isLoading ? (
           <div>load</div>

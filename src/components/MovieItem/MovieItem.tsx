@@ -25,7 +25,7 @@ function MovieItem(props: IMovieItemProps) {
   const { title, poster, year, onClick } = props;
 
   return (
-    <StyledMovieItem onClick={onClick}>
+    <StyledMovieItem onClick={onClick} data-testid="movie-item">
       <MoviePoster url={poster ? `${POSTER_URL}/${poster}` : noPosterImg} />
       <MovieInfo>
         <AvatarPhoto src={avatarImg} />

@@ -24,7 +24,7 @@ function MovieList({ isFetching }: { isFetching: boolean }) {
   };
 
   return (
-    <StyledMovieList>
+    <StyledMovieList data-testid="movie-list">
       {moviesList.map((movie: IMovieItem) => (
         <MovieItem
           key={movie.id}

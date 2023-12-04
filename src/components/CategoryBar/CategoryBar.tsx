@@ -36,12 +36,13 @@ function CategoryBar() {
   };
 
   return (
-    <StyledCategoryBar>
+    <StyledCategoryBar data-testid="category-bar">
       {error ? (
-        <SvgIcon icon={ErrorIcon} />
+        <SvgIcon icon={ErrorIcon} testId="category-error-icon" />
       ) : (
         categoriesList.map((item: ICategoryItem) => (
           <CategoryButton
+            data-testid="category-button"
             key={item.id}
             iscurrent={item.id === currentCategoryId ? 'true' : 'false'}
             onClick={() => onCategoryButtonClick(item.id)}>
