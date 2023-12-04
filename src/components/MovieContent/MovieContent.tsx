@@ -66,7 +66,7 @@ function MovieContent() {
           Show More
         </ShowMoreButton>
       )}
-      {moviesState.moviesList.length === 0 && !error && (
+      {moviesData?.total_results === 0 && (
         <MovieListEmpty data-testid="movie-list-empty">
           {nothingFoundedText}
         </MovieListEmpty>
