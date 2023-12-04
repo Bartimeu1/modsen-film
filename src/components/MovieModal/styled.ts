@@ -95,3 +95,19 @@ export const ModalCloseButton = styled.button`
     right: 20px;
   }
 `;
+
+export const ModalLoader = styled.div`
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100%;
+`;
+
+export const ModalLoaderImg = styled.img`
+  animation: rotate 1s infinite linear;
+
+  @keyframes rotate {
+  	0% {transform: rotate(0deg);}
+  	100% {transform: rotate(360deg);}
+  }
+}`;

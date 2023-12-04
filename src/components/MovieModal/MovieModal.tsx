@@ -4,6 +4,7 @@ import ReactDOM from 'react-dom';
 import { BASE_VIDEO_URL } from '@constants/url';
 import { IMovieItem } from '@root/types/globalTypes';
 import { useGetVideoByMovieIdQuery } from '@store/features/movies/movieApi';
+import loaderImg from '@assets/images/loader.png';
 
 import {
   ModalCloseButton,
@@ -11,6 +12,8 @@ import {
   ModalVideo,
   MovieTitle,
   StyledMovieModal,
+  ModalLoader,
+  ModalLoaderImg,
 } from './styled';
 
 interface IMovieModalProps {
@@ -49,7 +52,9 @@ function MovieModal(props: IMovieModalProps) {
         />
         <MovieTitle>{movie.title}</MovieTitle>
         {isLoading ? (
-          <div>load</div>
+          <ModalLoader>
+            <ModalLoaderImg src={loaderImg} alt="loader" />
+          </ModalLoader>
         ) : (
           <ModalVideo
             width="560"
