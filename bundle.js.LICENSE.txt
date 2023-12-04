@@ -1,0 +1,770 @@
+/*! ../baseApi/baseApi */
+
+/*! ../cjs/use-sync-external-store-shim.development.js */
+
+/*! ../cjs/use-sync-external-store-shim/with-selector.development.js */
+
+/*! ../components/Context */
+
+/*! ../connect/mapDispatchToProps */
+
+/*! ../connect/mapStateToProps */
+
+/*! ../connect/mergeProps */
+
+/*! ../connect/selectorFactory */
+
+/*! ../utils/Subscription */
+
+/*! ../utils/bindActionCreators */
+
+/*! ../utils/shallowEqual */
+
+/*! ../utils/useIsomorphicLayoutEffect */
+
+/*! ../utils/useSyncExternalStore */
+
+/*! ../utils/verifyPlainObject */
+
+/*! ../utils/warning */
+
+/*! ./App */
+
+/*! ./Context */
+
+/*! ./Enum.js */
+
+/*! ./GlobalStyle */
+
+/*! ./Prefixer.js */
+
+/*! ./Serializer.js */
+
+/*! ./Tokenizer.js */
+
+/*! ./Utility.js */
+
+/*! ./batch */
+
+/*! ./cjs/react-dom.development.js */
+
+/*! ./cjs/react-is.development.js */
+
+/*! ./cjs/react.development.js */
+
+/*! ./cjs/scheduler.development.js */
+
+/*! ./components/Context */
+
+/*! ./components/Provider */
+
+/*! ./components/connect */
+
+/*! ./defaultMemoize */
+
+/*! ./defineProperty.js */
+
+/*! ./exports */
+
+/*! ./features/baseApi/baseApi */
+
+/*! ./features/movies/movieApi */
+
+/*! ./features/movies/movieSlice */
+
+/*! ./features/theme/themeSlice */
+
+/*! ./hooks/useDispatch */
+
+/*! ./hooks/useSelector */
+
+/*! ./hooks/useStore */
+
+/*! ./invalidArgFactory */
+
+/*! ./isPlainObject */
+
+/*! ./store/store */
+
+/*! ./styled */
+
+/*! ./toPrimitive.js */
+
+/*! ./toPropertyKey.js */
+
+/*! ./typeof.js */
+
+/*! ./types */
+
+/*! ./useReduxContext */
+
+/*! ./useStore */
+
+/*! ./utils/batch */
+
+/*! ./utils/hooks */
+
+/*! ./utils/reactBatchedUpdates */
+
+/*! ./utils/shallowEqual */
+
+/*! ./verifySubselectors */
+
+/*! ./warning */
+
+/*! ./wrapMapToProps */
+
+/*! @assets/images/avatar.png */
+
+/*! @assets/images/error.svg */
+
+/*! @assets/images/facebook.svg */
+
+/*! @assets/images/instagram.svg */
+
+/*! @assets/images/linkedin.svg */
+
+/*! @assets/images/loader.png */
+
+/*! @assets/images/logo.png */
+
+/*! @assets/images/noPoster.png */
+
+/*! @assets/images/search.svg */
+
+/*! @assets/images/twitter.svg */
+
+/*! @babel/runtime/helpers/esm/extends */
+
+/*! @babel/runtime/helpers/esm/objectSpread2 */
+
+/*! @babel/runtime/helpers/esm/objectWithoutPropertiesLoose */
+
+/*! @components//BurgerMenu/BurgerMenu */
+
+/*! @components/CategoryBar/CategoryBar */
+
+/*! @components/Footer/Footer */
+
+/*! @components/Header/Header */
+
+/*! @components/MovieContent/MovieContent */
+
+/*! @components/MovieItem/MovieItem */
+
+/*! @components/MovieList/MovieList */
+
+/*! @components/MovieModal/MovieModal */
+
+/*! @components/MovieSkeletonLoader/MovieSkeletonLoader */
+
+/*! @components/SearchBar/SearchBar */
+
+/*! @components/SvgIcon/SvgIcon */
+
+/*! @constants/common */
+
+/*! @constants/text */
+
+/*! @constants/theme */
+
+/*! @constants/url */
+
+/*! @emotion/is-prop-valid */
+
+/*! @emotion/memoize */
+
+/*! @emotion/unitless */
+
+/*! @reduxjs/toolkit */
+
+/*! @reduxjs/toolkit/query */
+
+/*! @reduxjs/toolkit/query/react */
+
+/*! @store/features/movies/movieApi */
+
+/*! @store/features/movies/movieSlice */
+
+/*! @store/features/theme/themeSlice */
+
+/*! @utils/helpers */
+
+/*! @utils/hooks */
+
+/*! hoist-non-react-statics */
+
+/*! immer */
+
+/*! react */
+
+/*! react-dom */
+
+/*! react-dom/client */
+
+/*! react-is */
+
+/*! react-redux */
+
+/*! react-redux/es/exports */
+
+/*! redux */
+
+/*! redux-thunk */
+
+/*! reselect */
+
+/*! scheduler */
+
+/*! shallowequal */
+
+/*! styled-components */
+
+/*! stylis */
+
+/*! tslib */
+
+/*! use-sync-external-store/shim */
+
+/*! use-sync-external-store/shim/with-selector */
+
+/*!*********************!*\
+  !*** ./src/App.tsx ***!
+  \*********************/
+
+/*!***********************!*\
+  !*** ./src/index.tsx ***!
+  \***********************/
+
+/*!****************************!*\
+  !*** ./src/GlobalStyle.ts ***!
+  \****************************/
+
+/*!****************************!*\
+  !*** ./src/store/store.ts ***!
+  \****************************/
+
+/*!****************************!*\
+  !*** ./src/utils/hooks.ts ***!
+  \****************************/
+
+/*!******************************!*\
+  !*** ./src/constants/url.ts ***!
+  \******************************/
+
+/*!******************************!*\
+  !*** ./src/utils/helpers.ts ***!
+  \******************************/
+
+/*!*******************************!*\
+  !*** ./src/constants/text.ts ***!
+  \*******************************/
+
+/*!********************************!*\
+  !*** ./src/constants/theme.ts ***!
+  \********************************/
+
+/*!*********************************!*\
+  !*** ./src/constants/common.ts ***!
+  \*********************************/
+
+/*!************************************!*\
+  !*** ./src/assets/images/logo.png ***!
+  \************************************/
+
+/*!*************************************!*\
+  !*** ./node_modules/react/index.js ***!
+  \*************************************/
+
+/*!*************************************!*\
+  !*** ./src/assets/images/error.svg ***!
+  \*************************************/
+
+/*!**************************************!*\
+  !*** ./src/assets/images/avatar.png ***!
+  \**************************************/
+
+/*!**************************************!*\
+  !*** ./src/assets/images/loader.png ***!
+  \**************************************/
+
+/*!**************************************!*\
+  !*** ./src/assets/images/search.svg ***!
+  \**************************************/
+
+/*!***************************************!*\
+  !*** ./src/assets/images/twitter.svg ***!
+  \***************************************/
+
+/*!****************************************!*\
+  !*** ./node_modules/react-is/index.js ***!
+  \****************************************/
+
+/*!****************************************!*\
+  !*** ./node_modules/redux/es/redux.js ***!
+  \****************************************/
+
+/*!****************************************!*\
+  !*** ./src/assets/images/facebook.svg ***!
+  \****************************************/
+
+/*!****************************************!*\
+  !*** ./src/assets/images/linkedin.svg ***!
+  \****************************************/
+
+/*!****************************************!*\
+  !*** ./src/assets/images/noPoster.png ***!
+  \****************************************/
+
+/*!*****************************************!*\
+  !*** ./node_modules/react-dom/index.js ***!
+  \*****************************************/
+
+/*!*****************************************!*\
+  !*** ./node_modules/scheduler/index.js ***!
+  \*****************************************/
+
+/*!*****************************************!*\
+  !*** ./node_modules/stylis/src/Enum.js ***!
+  \*****************************************/
+
+/*!*****************************************!*\
+  !*** ./src/assets/images/instagram.svg ***!
+  \*****************************************/
+
+/*!*****************************************!*\
+  !*** ./src/components/Footer/styled.ts ***!
+  \*****************************************/
+
+/*!*****************************************!*\
+  !*** ./src/components/Header/styled.ts ***!
+  \*****************************************/
+
+/*!******************************************!*\
+  !*** ./node_modules/react-dom/client.js ***!
+  \******************************************/
+
+/*!******************************************!*\
+  !*** ./node_modules/tslib/tslib.es6.mjs ***!
+  \******************************************/
+
+/*!******************************************!*\
+  !*** ./src/components/Footer/Footer.tsx ***!
+  \******************************************/
+
+/*!******************************************!*\
+  !*** ./src/components/Header/Header.tsx ***!
+  \******************************************/
+
+/*!******************************************!*\
+  !*** ./src/components/SvgIcon/styled.ts ***!
+  \******************************************/
+
+/*!*******************************************!*\
+  !*** ./node_modules/reselect/es/index.js ***!
+  \*******************************************/
+
+/*!*******************************************!*\
+  !*** ./node_modules/stylis/src/Parser.js ***!
+  \*******************************************/
+
+/*!********************************************!*\
+  !*** ./node_modules/shallowequal/index.js ***!
+  \********************************************/
+
+/*!********************************************!*\
+  !*** ./node_modules/stylis/src/Utility.js ***!
+  \********************************************/
+
+/*!********************************************!*\
+  !*** ./src/components/MovieItem/styled.ts ***!
+  \********************************************/
+
+/*!********************************************!*\
+  !*** ./src/components/MovieList/styled.ts ***!
+  \********************************************/
+
+/*!********************************************!*\
+  !*** ./src/components/SearchBar/styled.ts ***!
+  \********************************************/
+
+/*!********************************************!*\
+  !*** ./src/components/SvgIcon/SvgIcon.tsx ***!
+  \********************************************/
+
+/*!*********************************************!*\
+  !*** ./node_modules/stylis/src/Prefixer.js ***!
+  \*********************************************/
+
+/*!*********************************************!*\
+  !*** ./src/components/BurgerMenu/styled.ts ***!
+  \*********************************************/
+
+/*!*********************************************!*\
+  !*** ./src/components/MovieModal/styled.ts ***!
+  \*********************************************/
+
+/*!**********************************************!*\
+  !*** ./node_modules/react-redux/es/index.js ***!
+  \**********************************************/
+
+/*!**********************************************!*\
+  !*** ./node_modules/react-redux/es/types.js ***!
+  \**********************************************/
+
+/*!**********************************************!*\
+  !*** ./node_modules/redux-thunk/es/index.js ***!
+  \**********************************************/
+
+/*!**********************************************!*\
+  !*** ./node_modules/stylis/src/Tokenizer.js ***!
+  \**********************************************/
+
+/*!**********************************************!*\
+  !*** ./src/components/CategoryBar/styled.ts ***!
+  \**********************************************/
+
+/*!***********************************************!*\
+  !*** ./node_modules/immer/dist/immer.esm.mjs ***!
+  \***********************************************/
+
+/*!***********************************************!*\
+  !*** ./node_modules/stylis/src/Middleware.js ***!
+  \***********************************************/
+
+/*!***********************************************!*\
+  !*** ./node_modules/stylis/src/Serializer.js ***!
+  \***********************************************/
+
+/*!***********************************************!*\
+  !*** ./src/components/MovieContent/styled.ts ***!
+  \***********************************************/
+
+/*!***********************************************!*\
+  !*** ./src/store/features/baseApi/baseApi.ts ***!
+  \***********************************************/
+
+/*!***********************************************!*\
+  !*** ./src/store/features/movies/movieApi.ts ***!
+  \***********************************************/
+
+/*!************************************************!*\
+  !*** ./node_modules/react-redux/es/exports.js ***!
+  \************************************************/
+
+/*!************************************************!*\
+  !*** ./src/components/MovieItem/MovieItem.tsx ***!
+  \************************************************/
+
+/*!************************************************!*\
+  !*** ./src/components/MovieList/MovieList.tsx ***!
+  \************************************************/
+
+/*!************************************************!*\
+  !*** ./src/components/SearchBar/SearchBar.tsx ***!
+  \************************************************/
+
+/*!************************************************!*\
+  !*** ./src/store/features/theme/themeSlice.ts ***!
+  \************************************************/
+
+/*!*************************************************!*\
+  !*** ./src/store/features/movies/movieSlice.ts ***!
+  \*************************************************/
+
+/*!**************************************************!*\
+  !*** ./src/components/BurgerMenu/BurgerMenu.tsx ***!
+  \**************************************************/
+
+/*!**************************************************!*\
+  !*** ./src/components/MovieModal/MovieModal.tsx ***!
+  \**************************************************/
+
+/*!****************************************************!*\
+  !*** ./node_modules/react-redux/es/utils/batch.js ***!
+  \****************************************************/
+
+/*!****************************************************!*\
+  !*** ./node_modules/reselect/es/defaultMemoize.js ***!
+  \****************************************************/
+
+/*!****************************************************!*\
+  !*** ./src/components/CategoryBar/CategoryBar.tsx ***!
+  \****************************************************/
+
+/*!*****************************************************!*\
+  !*** ./node_modules/react/cjs/react.development.js ***!
+  \*****************************************************/
+
+/*!******************************************************!*\
+  !*** ./node_modules/react-redux/es/utils/warning.js ***!
+  \******************************************************/
+
+/*!******************************************************!*\
+  !*** ./src/components/MovieContent/MovieContent.tsx ***!
+  \******************************************************/
+
+/*!******************************************************!*\
+  !*** ./src/components/MovieSkeletonLoader/styled.ts ***!
+  \******************************************************/
+
+/*!*******************************************************!*\
+  !*** ./node_modules/react-redux/es/hooks/useStore.js ***!
+  \*******************************************************/
+
+/*!**********************************************************!*\
+  !*** ./node_modules/react-redux/es/hooks/useDispatch.js ***!
+  \**********************************************************/
+
+/*!**********************************************************!*\
+  !*** ./node_modules/react-redux/es/hooks/useSelector.js ***!
+  \**********************************************************/
+
+/*!***********************************************************!*\
+  !*** ./node_modules/@babel/runtime/helpers/esm/typeof.js ***!
+  \***********************************************************/
+
+/*!***********************************************************!*\
+  !*** ./node_modules/react-is/cjs/react-is.development.js ***!
+  \***********************************************************/
+
+/*!***********************************************************!*\
+  !*** ./node_modules/react-redux/es/components/Context.js ***!
+  \***********************************************************/
+
+/*!***********************************************************!*\
+  !*** ./node_modules/react-redux/es/components/connect.js ***!
+  \***********************************************************/
+
+/*!***********************************************************!*\
+  !*** ./node_modules/react-redux/es/connect/mergeProps.js ***!
+  \***********************************************************/
+
+/*!***********************************************************!*\
+  !*** ./node_modules/react-redux/es/utils/Subscription.js ***!
+  \***********************************************************/
+
+/*!***********************************************************!*\
+  !*** ./node_modules/react-redux/es/utils/shallowEqual.js ***!
+  \***********************************************************/
+
+/*!************************************************************!*\
+  !*** ./node_modules/@babel/runtime/helpers/esm/extends.js ***!
+  \************************************************************/
+
+/*!************************************************************!*\
+  !*** ./node_modules/react-redux/es/components/Provider.js ***!
+  \************************************************************/
+
+/*!************************************************************!*\
+  !*** ./node_modules/react-redux/es/utils/isPlainObject.js ***!
+  \************************************************************/
+
+/*!************************************************************!*\
+  !*** ./node_modules/use-sync-external-store/shim/index.js ***!
+  \************************************************************/
+
+/*!*************************************************************!*\
+  !*** ./node_modules/react-dom/cjs/react-dom.development.js ***!
+  \*************************************************************/
+
+/*!*************************************************************!*\
+  !*** ./node_modules/scheduler/cjs/scheduler.development.js ***!
+  \*************************************************************/
+
+/*!**************************************************************!*\
+  !*** ./node_modules/react-redux/es/hooks/useReduxContext.js ***!
+  \**************************************************************/
+
+/*!***************************************************************!*\
+  !*** ./node_modules/react-redux/es/connect/wrapMapToProps.js ***!
+  \***************************************************************/
+
+/*!****************************************************************!*\
+  !*** ./node_modules/@babel/runtime/helpers/esm/toPrimitive.js ***!
+  \****************************************************************/
+
+/*!****************************************************************!*\
+  !*** ./node_modules/react-redux/es/connect/mapStateToProps.js ***!
+  \****************************************************************/
+
+/*!****************************************************************!*\
+  !*** ./node_modules/react-redux/es/connect/selectorFactory.js ***!
+  \****************************************************************/
+
+/*!****************************************************************!*\
+  !*** ./node_modules/react-redux/es/utils/verifyPlainObject.js ***!
+  \****************************************************************/
+
+/*!*****************************************************************!*\
+  !*** ./node_modules/@reduxjs/toolkit/dist/redux-toolkit.esm.js ***!
+  \*****************************************************************/
+
+/*!*****************************************************************!*\
+  !*** ./node_modules/react-redux/es/utils/bindActionCreators.js ***!
+  \*****************************************************************/
+
+/*!*****************************************************************!*\
+  !*** ./node_modules/react-redux/node_modules/react-is/index.js ***!
+  \*****************************************************************/
+
+/*!******************************************************************!*\
+  !*** ./node_modules/@babel/runtime/helpers/esm/objectSpread2.js ***!
+  \******************************************************************/
+
+/*!******************************************************************!*\
+  !*** ./node_modules/@babel/runtime/helpers/esm/toPropertyKey.js ***!
+  \******************************************************************/
+
+/*!******************************************************************!*\
+  !*** ./node_modules/react-redux/es/connect/invalidArgFactory.js ***!
+  \******************************************************************/
+
+/*!******************************************************************!*\
+  !*** ./node_modules/react-redux/es/utils/reactBatchedUpdates.js ***!
+  \******************************************************************/
+
+/*!*******************************************************************!*\
+  !*** ./node_modules/@babel/runtime/helpers/esm/defineProperty.js ***!
+  \*******************************************************************/
+
+/*!*******************************************************************!*\
+  !*** ./node_modules/@emotion/memoize/dist/emotion-memoize.esm.js ***!
+  \*******************************************************************/
+
+/*!*******************************************************************!*\
+  !*** ./node_modules/@reduxjs/toolkit/dist/query/rtk-query.esm.js ***!
+  \*******************************************************************/
+
+/*!*******************************************************************!*\
+  !*** ./node_modules/react-redux/es/connect/mapDispatchToProps.js ***!
+  \*******************************************************************/
+
+/*!*******************************************************************!*\
+  !*** ./node_modules/react-redux/es/connect/verifySubselectors.js ***!
+  \*******************************************************************/
+
+/*!*******************************************************************!*\
+  !*** ./node_modules/react-redux/es/utils/useSyncExternalStore.js ***!
+  \*******************************************************************/
+
+/*!********************************************************************!*\
+  !*** ./node_modules/use-sync-external-store/shim/with-selector.js ***!
+  \********************************************************************/
+
+/*!********************************************************************!*\
+  !*** ./src/components/MovieSkeletonLoader/MovieSkeletonLoader.tsx ***!
+  \********************************************************************/
+
+/*!*********************************************************************!*\
+  !*** ./node_modules/@emotion/unitless/dist/emotion-unitless.esm.js ***!
+  \*********************************************************************/
+
+/*!************************************************************************!*\
+  !*** ./node_modules/react-redux/es/utils/useIsomorphicLayoutEffect.js ***!
+  \************************************************************************/
+
+/*!******************************************************************************!*\
+  !*** ./node_modules/styled-components/dist/styled-components.browser.esm.js ***!
+  \******************************************************************************/
+
+/*!*******************************************************************************!*\
+  !*** ./node_modules/@emotion/is-prop-valid/dist/emotion-is-prop-valid.esm.js ***!
+  \*******************************************************************************/
+
+/*!*******************************************************************************!*\
+  !*** ./node_modules/@reduxjs/toolkit/dist/query/react/rtk-query-react.esm.js ***!
+  \*******************************************************************************/
+
+/*!*********************************************************************************!*\
+  !*** ./node_modules/@babel/runtime/helpers/esm/objectWithoutPropertiesLoose.js ***!
+  \*********************************************************************************/
+
+/*!**********************************************************************************!*\
+  !*** ./node_modules/hoist-non-react-statics/dist/hoist-non-react-statics.cjs.js ***!
+  \**********************************************************************************/
+
+/*!************************************************************************************!*\
+  !*** ./node_modules/react-redux/node_modules/react-is/cjs/react-is.development.js ***!
+  \************************************************************************************/
+
+/*!**********************************************************************************************!*\
+  !*** ./node_modules/use-sync-external-store/cjs/use-sync-external-store-shim.development.js ***!
+  \**********************************************************************************************/
+
+/*!************************************************************************************************************!*\
+  !*** ./node_modules/use-sync-external-store/cjs/use-sync-external-store-shim/with-selector.development.js ***!
+  \************************************************************************************************************/
+
+/**
+ * @license React
+ * react-dom.development.js
+ *
+ * Copyright (c) Facebook, Inc. and its affiliates.
+ *
+ * This source code is licensed under the MIT license found in the
+ * LICENSE file in the root directory of this source tree.
+ */
+
+/**
+ * @license React
+ * react-is.development.js
+ *
+ * Copyright (c) Facebook, Inc. and its affiliates.
+ *
+ * This source code is licensed under the MIT license found in the
+ * LICENSE file in the root directory of this source tree.
+ */
+
+/**
+ * @license React
+ * scheduler.development.js
+ *
+ * Copyright (c) Facebook, Inc. and its affiliates.
+ *
+ * This source code is licensed under the MIT license found in the
+ * LICENSE file in the root directory of this source tree.
+ */
+
+/**
+ * @license React
+ * use-sync-external-store-shim.development.js
+ *
+ * Copyright (c) Facebook, Inc. and its affiliates.
+ *
+ * This source code is licensed under the MIT license found in the
+ * LICENSE file in the root directory of this source tree.
+ */
+
+/**
+ * @license React
+ * use-sync-external-store-shim/with-selector.development.js
+ *
+ * Copyright (c) Facebook, Inc. and its affiliates.
+ *
+ * This source code is licensed under the MIT license found in the
+ * LICENSE file in the root directory of this source tree.
+ */
+
+/**
+ * Checks if an event is supported in the current execution environment.
+ *
+ * NOTE: This will not work correctly for non-generic events such as `change`,
+ * `reset`, `load`, `error`, and `select`.
+ *
+ * Borrows from Modernizr.
+ *
+ * @param {string} eventNameSuffix Event name, e.g. "click".
+ * @return {boolean} True if the event is supported.
+ * @internal
+ * @license Modernizr 3.0.0pre (Custom Build) | MIT
+ */
+
+/** @license React v16.13.1
+ * react-is.development.js
+ *
+ * Copyright (c) Facebook, Inc. and its affiliates.
+ *
+ * This source code is licensed under the MIT license found in the
+ * LICENSE file in the root directory of this source tree.
+ */
