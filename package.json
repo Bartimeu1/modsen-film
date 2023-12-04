@@ -7,7 +7,9 @@
     "start": "webpack server --open",
     "lint": "eslint .",
     "lint:fix": "eslint . --fix",
-    "test:cypress": "cypress open"
+    "test:cypress": "cypress open",
+    "predeploy": "npm run build",
+    "deploy": "gh-pages -d dist"
   },
   "devDependencies": {
     "@babel/cli": "^7.23.4",
