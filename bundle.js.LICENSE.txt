@@ -160,6 +160,8 @@
 
 /*! @components/SearchBar/SearchBar */
 
+/*! @components/SearchHint/SearchHint */
+
 /*! @components/SvgIcon/SvgIcon */
 
 /*! @constants/common */
@@ -181,6 +183,8 @@
 /*! @reduxjs/toolkit/query */
 
 /*! @reduxjs/toolkit/query/react */
+
+/*! @root/store/features/movies/movieApi */
 
 /*! @store/features/movies/movieApi */
 
@@ -404,6 +408,10 @@
   !*** ./src/components/MovieModal/styled.ts ***!
   \*********************************************/
 
+/*!*********************************************!*\
+  !*** ./src/components/SearchHint/styled.ts ***!
+  \*********************************************/
+
 /*!**********************************************!*\
   !*** ./node_modules/react-redux/es/index.js ***!
   \**********************************************/
@@ -478,6 +486,10 @@
 
 /*!**************************************************!*\
   !*** ./src/components/MovieModal/MovieModal.tsx ***!
+  \**************************************************/
+
+/*!**************************************************!*\
+  !*** ./src/components/SearchHint/SearchHint.tsx ***!
   \**************************************************/
 
 /*!****************************************************!*\
