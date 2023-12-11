@@ -5,6 +5,7 @@ export const StyledSearchBar = styled.div`
   display: flex;
   align-items: center;
   height: 38px;
+  position: relative;
   @media (max-width: 650px) {
     height: 33px;
     justify-content: center;

@@ -6,6 +6,7 @@ import {
 } from '@store/features/movies/movieSlice';
 import { useAppDispatch, useAppSelector } from '@utils/hooks';
 
+import SearchHint from '@components/SearchHint/SearchHint';
 import {
   SearchButton,
   SearchInput,
@@ -15,14 +16,22 @@ import {
 
 function SearchBar() {
   const dispatch = useAppDispatch();
+
   const currentCategory = useAppSelector(
     (state) => state.movie.currentCategoryId,
   );
 
   const [searchValue, setSearchValue] = useState('');
+  const [isInputFocused, setIsInputFocused] = useState(false);
 
   const changeSearchValue = (e: React.ChangeEvent<HTMLInputElement>) => {
     setSearchValue(e.target.value);
+  };
+
+  const onAutocompleteClick = (value: string) => {
+    setSearchValue(value);
+    dispatch(updateMovieSearch({ value }));
+    dispatch(setMovieCategory({ categoryId: 0 }));
   };
 
   const onSearchButtonClick = () => {
@@ -43,6 +52,13 @@ function SearchBar() {
         placeholder="Search"
         value={searchValue}
         onChange={(e) => changeSearchValue(e)}
+        onFocus={() => setIsInputFocused(true)}
+        onBlur={() => setIsInputFocused(false)}
+      />
+      <SearchHint
+        searchValue={searchValue}
+        isInputFocused={isInputFocused}
+        onAutocompleteClick={onAutocompleteClick}
       />
       <SearchButton onClick={() => onSearchButtonClick()}>
         <StyledSearchIcon />
